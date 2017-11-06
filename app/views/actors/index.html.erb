@@ -1,8 +1,10 @@
 <h1>Actors list</h1>
 
+<%= link_to "Crear Actor", new_actor_path %>
+
 <% @actors.each do |actor| %>
 	<p><%= actor.name %></p>
-	<div><%= image_tag actor.image_url %></div>	
+	<div><%= image_tag(actor.image_url) unless actor.image_url.blank?%></div>	
 	<p><%= actor.bio %></p>
 	<% if actor.alive? %>
 		<p><%= actor.birth_date %></p>
